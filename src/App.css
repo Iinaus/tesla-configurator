@@ -1,38 +1,211 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+button {
+  margin: 0.5rem;
+  padding: 0.5rem;
   text-align: center;
+  font-size: 1rem;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;  
+  transition-duration: 0.2s;
+  cursor: pointer;
+  width: 40%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button:hover {
+  background-color: whitesmoke;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.bluebutton {
   color: white;
+  background-color: #3e6ae1;
 }
 
-.App-link {
-  color: #61dafb;
+.bluebutton:hover {
+  background-color: #3457b1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.widebutton {
+  width: 90%;
+  text-align: left;
+  padding: 1rem;
+}
+
+.widebutton-active {
+  width: 90%;
+  text-align: left;
+  padding: 1rem;
+  border: 3px solid #3e6ae1;  
+  font-weight: bold;
+}
+
+.widebuttonblue {
+  width: 90%;
+  text-align: center;
+  padding: 0.7rem;
+  color: white;
+  background-color: #3e6ae1;
+}
+
+.widebuttonblue:hover {
+  background-color: #3457b1;
+}
+
+.stats {
+  margin: auto;
+}
+
+.stats td {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.stats th {
+  color: grey;
+  font-size: small;
+  font-weight: thin;
+}
+
+ul {
+  margin: 0.5rem 1rem 0.5rem 2rem;
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  text-align: left;
+  list-style-position: inside;
+}
+
+input {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.previewphotos {
+  max-width: 100%;
+  height: auto;
+}
+
+.colorPicker {
+  max-width: 4rem;
+  margin: 0.5rem;
+  padding: 3px;
+  border-radius: 50%;
+  border: 3px solid #ffffff; 
+}
+
+.colorPicker-active {
+  max-width: 4rem;
+  margin: 0.5rem;
+  padding: 3px;
+  border-radius: 50%;
+  border: 3px solid #3e6ae1;  
+}
+
+.colorPickerRadio {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  text-align: left;
+  font-weight: bold;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+  "header header"
+  "photos menu"
+  "price menu";
+  grid-template-columns: 1fr 450px;
+  grid-template-rows: 50px 1fr 60px;
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  height: 50px;
+  padding: 20px 0px 0px 50px;
+  font-weight: bold;
+}
+
+.photos {
+  grid-area: photos;
+  max-height: 80vh;
+}
+
+.price {
+  grid-area: price;
+  height: 60px;
+  background-color: #f4f4f4;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  padding: 1rem 7rem 1rem 7rem;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.menu {
+  grid-area: menu;
+  text-align: center;
+  padding: 1rem;
+  overflow-y: scroll;
+}
+
+.menu div {
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+.menu div:last-child {
+  padding: 2rem 1rem 80px 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "photos"
+    "menu"
+    "price";
+    grid-template-columns: 1fr;
+    height: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  header {
+    position: sticky;
   }
+  
+  .photos {
+    max-height: none;
+  }
+  
+  .price {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+  }
+  
+  .menu {
+    overflow-y: visible;
+  }  
 }
