@@ -8,7 +8,7 @@
 
 ## About   
 
-This Tesla Configurator React application was build as an exercise for React course in Vaasa University of Applied Sciences. The assingment was to ceate a configurator similar to [Tesla Configurator](https://www.tesla.com/models/design#overview) in React.
+This Tesla Configurator React application was build as an exercise for React course in Vaasa University of Applied Sciences. The assignment was to ceate a configurator similar to [Tesla Configurator](https://www.tesla.com/models/design#overview) in React.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
